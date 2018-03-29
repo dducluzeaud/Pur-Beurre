@@ -9,13 +9,26 @@ class Categories(models.Model):
 
 
 class Products(models.Model):
-    id_product = models.IntegerField(primary_key=True)
-    product_name = models.CharField(max_length=255, unique=True)
+    id_product = models.BigIntegerField(primary_key=True)
+    product_name = models.CharField(max_length=255)
     url = models.URLField()
     img = models.URLField()
+    fat = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    saturated_fat = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    salt = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    sugar = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    nutriscore = models.CharField(max_length=1, null=True)
+    category = models.ForeignKey("Categories", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id_product, self.product_name, self.url, self.img
+        return str({
+            "id_product": self.id_product,
+            "product_name": self.product_name,
+            "url":self.url,
+            "image": self.img,
+            "nutriscore": self.nutriscore,
+            "category": self.category
+            })
 
 
 class Substitutes(models.Model):
