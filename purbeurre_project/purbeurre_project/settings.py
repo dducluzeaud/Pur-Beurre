@@ -25,7 +25,7 @@ SECRET_KEY = 'an!azkrpo-nm5yjpst^l#1-gd0lykcbeb1_(stfhe-aa#+1=%b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -125,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Django debug toolbar
+INTERNAL_IPS = ['127.0.0.1']
