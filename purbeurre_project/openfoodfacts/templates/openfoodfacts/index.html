@@ -1,165 +1,80 @@
-<!DOCTYPE html>
-<html lang="fr">
+{% extends 'openfoodfacts/base.html' %}
 
-  <head>
+{% load static %}
+{% block content %}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Accueil</title>
-
-    {% load static %}
-
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'openfoodfacts/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="{% static 'openfoodfacts/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="{% static 'openfoodfacts/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'openfoodfacts/css/creative.css' %}" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <img src="{% static 'openfoodfacts/img/logo_pur_beurre.png' %}" width="30px">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Pur Beurre</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="">
-                  <form method="get">
-                    <input type="text" name="" value="">
-                    <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-                  </form>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href=""><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="">
-                  <img src="{% static 'openfoodfacts/img/logo_carotte.png' %}" width="30px" height="30px">
-              </a>
-            </li>
-          </ul>
-        </div>
+<header class="masthead text-center text-white d-flex">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase">
+          Du gras, oui, mais de qualité !
+        </h1>
+        <hr>
       </div>
-    </nav>
-
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              Du gras, oui, mais de qualité !
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <h2 class="mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
-            <form method="get" action="">
-                <div class="col-lg-8 mx-auto input-group mb-3">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Chercher</button>
-                      </div>
-                    </div>
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
-            <h2 class="section-heading text-white">Colette et Rémy!</h2>
-            <hr class="light my-4">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="{% static 'openfoodfacts/img/colette.png' %}" alt="" height="250px">
-                    <p class="text-faded mb-4 text-justify"><strong>Colette Tatou :</strong> "Nous aimons tous manger, surtout en France ! Personnellement, une baguette fraîche, du bon fromage de chèvre et un bon vin rouge me suffisent amplement. Comme tout le monde, je fais mes courses au supermarché. Mais petit à petit je me suis rendue compte, surtout lorsque nous avons ouvert le restaurant, que je pouvais remplacer les produits aseptisés que j'avais l'habitude d'acheter par de bons produits du terroir Et souvent pour le même prix !"</p>
-                </div>
-                <div class="col-lg-6">
-                    <img src="{% static 'openfoodfacts/img/remy.png' %}" alt="" height="250px">
-                    <p class="text-faded mb-4 text-justify"><strong>Remy : </strong>"Pour ma part je me rendais déjà dans bien des magasins car j'aime beaucoup me balader, surtout dans les caves et les cuisines. Je connaissais par coeur le contenu des boutiques bio (dont je raffole) ainsi que les ingrédients de tous les aliments vendus. Lorsque Colette m'a demandé si elle pouvait remplacer son Nutella matinal par un aliment plus sain, je savais tout de suite où le trouver. L'idée de Pur Beurre était née !"</p>
-                </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Contactez nous!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Vous souhaitez en savoir d'avantages ou participer ? N'hésitez pas ! Envoyez nous un e-mail ou appellez nous et nous serons ravis de vous répondre !</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>12.34.56.67.89</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">mail@mail.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 ml-auto text-center">
-                    <p class="my-4">Mentions légales</p>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <p class="my-4" href="#Contacts">Contacts</p>
+      <div class="col-lg-8 mx-auto">
+        <h2 class="mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
+        <form method="get" action="{% url 'openfoodfacts:search' %}" accept-charset="utf-8">
+            <div class="col-lg-8 mx-auto input-group mb-3">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Nom d'un produit à susbstituer" name="query">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Chercher</button>
+                  </div>
                 </div>
             </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-primary" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <h2 class="section-heading text-white">Colette et Rémy!</h2>
+        <hr class="light my-4">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{% static 'openfoodfacts/img/colette.png' %}" alt="" height="250px">
+                <p class="text-faded mb-4 text-justify"><strong>Colette Tatou :</strong> "Nous aimons tous manger, surtout en France ! Personnellement, une baguette fraîche, du bon fromage de chèvre et un bon vin rouge me suffisent amplement. Comme tout le monde, je fais mes courses au supermarché. Mais petit à petit je me suis rendue compte, surtout lorsque nous avons ouvert le restaurant, que je pouvais remplacer les produits aseptisés que j'avais l'habitude d'acheter par de bons produits du terroir Et souvent pour le même prix !"</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'openfoodfacts/img/remy.png' %}" alt="" height="250px">
+                <p class="text-faded mb-4 text-justify"><strong>Remy : </strong>"Pour ma part je me rendais déjà dans bien des magasins car j'aime beaucoup me balader, surtout dans les caves et les cuisines. Je connaissais par coeur le contenu des boutiques bio (dont je raffole) ainsi que les ingrédients de tous les aliments vendus. Lorsque Colette m'a demandé si elle pouvait remplacer son Nutella matinal par un aliment plus sain, je savais tout de suite où le trouver. L'idée de Pur Beurre était née !"</p>
+            </div>
+
         </div>
-    </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'openfoodfacts/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'openfoodfacts/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Plugin JavaScript -->
-    <script src="{% static 'openfoodfacts/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'openfoodfacts/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
-    <script src="{% static 'openfoodfacts/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading">Contactez nous!</h2>
+        <hr class="my-4">
+        <p class="mb-5">Vous souhaitez en savoir d'avantages ou participer ? N'hésitez pas ! Envoyez nous un e-mail ou appellez nous et nous serons ravis de vous répondre !</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 ml-auto text-center">
+        <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+        <p>12.34.56.67.89</p>
+      </div>
+      <div class="col-lg-4 mr-auto text-center">
+        <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+        <p>
+          <a href="mailto:your-email@your-domain.com">mail@mail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Custom scripts for this template -->
-    <script src="{% static 'openfoodfacts/js/creative.min.js' %}"></script>
-
-  </body>
-
-</html>
+{% endblock %}
