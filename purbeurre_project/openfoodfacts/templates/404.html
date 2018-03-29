@@ -1,0 +1,23 @@
+{% extends 'openfoodfacts/base.html' %}
+
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="mb-5">Nous n'avons pas encore ce type de produits. Cherchez en un autre !</h2>
+        <form method="get" action="{% url 'openfoodfacts:search' %}" accept-charset="utf-8">
+            <div class="col-lg-8 mx-auto input-group mb-3">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Produit à susbstituer" name="query">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Chercher</button>
+                  </div>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
