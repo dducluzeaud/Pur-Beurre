@@ -1,0 +1,46 @@
+{% extends 'openfoodfacts/base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+{% include 'openfoodfacts/header.html' with img=img title=title %}
+
+
+<section>
+    <div class="container text-center mb-5" >
+        <h3>Vous pouvez remplacer cet aliment par:</h3>
+    </div>
+    <div class="container">
+    	<div class="row">
+    		{% for product in products %}
+    		<div class="col-lg-4 text-center">
+
+    			<a href="{% url 'openfoodfacts:detail' id_product=product.id_product %}">
+    				<img  class="img-responsive mb-5" src="{{ product.img }}" alt="Product.product_name" />
+    			</a>
+    			<h6><a href="/">{{ product.product_name }}</a></h3>
+    		</div>
+    {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+    {% endfor %}
+    		</div>
+    	</div>
+    </div>
+
+
+
+    {% if paginate %}
+    <div class="clearfix"></div>
+    <nav aria-label="">
+        <ul class="pager">
+          {% if products.has_previous %}
+              <li><a href="?query={{ query }}&page={{ products.previous_page_number }}">Précédent</a></li>
+          {% endif %}
+          {% if products.has_next %}
+              <li><a href="?query={{ query }}&page={{ products.next_page_number }}">Suivant</a></li>
+          {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</section>
+{% endblock %}
