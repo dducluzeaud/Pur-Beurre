@@ -11,18 +11,21 @@ def index(request):
 
 def search(request):
     query = request.GET.get('query')
-    try:
-        category_p = Products.objects.filter(product_name__iexact=query).first()
-    except Exception as e:
+
+    # query match product_name
+    category_p = Products.objects.filter(product_name__iexact=query).first()
+
+    # query don't match exactly but can match product_name
+    if not category_p:
         category_p = Products.objects.filter(product_name__icontains=query).first()
-        print(e)
-    finally:
-        if not category_p:
-            raise Http404
-        else:
-            products_list = Products.objects.filter(category=category_p.category)
-            products_list = products_list.order_by('nutriscore')
-            products_list = products_list.exclude(product_name=query)
+
+    # query doesn't match at all
+    if not category_p:
+        raise Http404
+    else:
+        products_list = Products.objects.filter(category=category_p.category)
+        products_list = products_list.order_by('nutriscore')
+        products_list = products_list.exclude(product_name=query)
 
 
     # Slices pages
