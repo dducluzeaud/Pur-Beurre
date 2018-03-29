@@ -62,16 +62,16 @@ def detail(request, id_product):
     else:
         saturated_fat_index_img = url + "high_30.png"
 
-    if product.salt < 5:
+    if product.salt < 0.3:
         salt_index_img = url + "low_30.png"
-    elif 5 <= product.salt < 12.5:
+    elif 0.3 <= product.salt < 1.5:
         salt_index_img = url + "moderate_30.png"
     else:
         salt_index_img = url + "high_30.png"
 
-    if product.sugar < 0.3:
+    if product.sugar < 5:
         sugar_index_img = url + "low_30.png"
-    elif 0.3 <= product.sugar < 1.5:
+    elif 5 <= product.sugar < 12.5:
         sugar_index_img = url + "moderate_30.png"
     else:
         sugar_index_img = url + "high_30.png"
