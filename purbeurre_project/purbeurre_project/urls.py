@@ -21,8 +21,10 @@ from openfoodfacts import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^openfoodfacts/', include('openfoodfacts.urls')),
-    url(r'^admin/', admin.site.urls)
+    url(r'^openfoodfacts/', include(('openfoodfacts.urls', 'openfoodfacts'),
+        namespace='openfoodfacts'
+        )),
+    url(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
