@@ -1,10 +1,23 @@
+* {
+ box-sizing: border-box;
+}
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+
 body, html {
-	width: 100%;
-	height: 100%;
+	margin: 0;
+    padding: 0;
+    height: 100%;
+position: relative;
 }
 
 body {
-	font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+	font-family: "Scope One", sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 hr {
@@ -24,12 +37,17 @@ a {
 	transition: all 0.2s;
 }
 
+
 a:hover {
 	color: #DE9440;
 }
 
-h1, h2, h3, h4, h5, h6 {
+dix.container > h6{
+    color: #DE9440;
+}
+h1, h2, h3, h4, h5, h6, p{
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: #E8A75D;
 }
 
 .bg-primary {
@@ -158,7 +176,8 @@ input::placeholder {
 	#mainNav.navbar-shrink input{
 		background: none;
 		border: none;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #6C757D;
+		color: #6C757D;
 	}
 
 
@@ -170,7 +189,7 @@ input::placeholder {
 		color: #DE9440;
 	}
 
-	#mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus input{
+	#mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
 		color: #212529;
 
 	}
@@ -189,14 +208,9 @@ input {
 	background: none;
 	border: none;
 	border-bottom: 1px solid white;
+	color: white;
 }
 
-input.form-control{
-	text-color: #DE9440;
-	background: none;
-	border: none;
-	border-bottom: 1px solid white;
-}
 
 
 form button{
@@ -205,6 +219,10 @@ form button{
 	background: none;
 	position: relative;
 	cursor: pointer;
+}
+
+.navbar-shrink form button{
+	color: black;
 }
 
 header.masthead {
@@ -256,6 +274,11 @@ header.masthead p {
 	}
 }
 
+.page-link{
+	color:#6C757D;
+	border: none;
+}
+
 
 
 
@@ -292,10 +315,84 @@ header.masthead p {
 	box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
+form button .fa-2x{
+    font-size: none;
+	width: 30:
+	height: 30;
+}
+
+input#id_username, input#id_password, input#id_email, input#id_password1, input#id_password2 {
+	border-bottom: 1px solid #DE9440;
+	color:#6C757D;
+}
+
+label
+{
+	display: block;
+	width: 250px;
+	float: left;
+}
+
+btn btn-outline-secondary::selection {
+	color: #345A61;
+}
+
+footer > div > div > div > p > a{
+	color: white;
+}
+
+.site-content {
+	min-height: 100vh; /* will cover the 100% of viewport */
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+body > .container {
+	padding-top: 60px;
+}
+
 #index_img {
 	float: left;
 }
 
+.item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+.notify-badge{
+    position: relative;
+    right:-150px;
+    top:14px;
+    background:#DE9440;
+    text-align: center;
+    border-radius: 60px 60px 60px 60px;
+    color:white;
+    padding:4px 10px;
+    font-size:20px;
+}
+
+.mg-responsive .mb-5 .search_img{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+	color: #DE9440;
+}
+
+button > i.fa.fa-floppy-o {
+	color:#DE9440;
+}
+
+form button > i.fa.fa-times {
+	color:#C45525;
+}
+
 footer {
-	width: 100%;
+	position: absolute;
+    bottom: 0;
+    width: 100%;
 }
