@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Categories(models.Model):
     category_name = models.CharField(max_length=255, unique=True)
@@ -34,3 +34,11 @@ class Products(models.Model):
 class Substitutes(models.Model):
     origin = models.ForeignKey(Products, related_name="origin", on_delete=models.CASCADE)
     replacement = models.ForeignKey(Products, related_name="replacement", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='user', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return str({
+            "origin": self.orign,
+            "replacement": self.replacement,
+            "user": self.user
+        })
