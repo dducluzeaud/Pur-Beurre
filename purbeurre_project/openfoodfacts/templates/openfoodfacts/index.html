@@ -1,25 +1,28 @@
-{% extends 'openfoodfacts/base.html' %}
+{% extends 'openfoodfacts/base.html'  %}
 
 {% load static %}
+
+{% block title%}{{ page_title }}{% endblock %}
+
 {% block content %}
 
 <header class="masthead text-center text-white d-flex">
   <div class="container my-auto">
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <h1 class="text-uppercase">
+        <h1 class="text-uppercase text-white">
           Du gras, oui, mais de qualité !
         </h1>
         <hr>
       </div>
       <div class="col-lg-8 mx-auto">
-        <h2 class="mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
+        <h2 class="mb-5 text-white">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
         <form method="get" action="{% url 'openfoodfacts:search' %}" accept-charset="utf-8">
             <div class="col-lg-8 mx-auto input-group mb-3">
                 <div class="input-group">
                   <input class="form-control" placeholder="Nom d'un produit à susbstituer" name="query">
                   <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Chercher</button>
+                    <button class="btn btn-outline-secondary" type="submit">Chercher</button>
                   </div>
                 </div>
             </div>
@@ -45,36 +48,12 @@
                 <img src="{% static 'openfoodfacts/img/remy.png' %}" alt="" height="250px">
                 <p class="text-faded mb-4 text-justify"><strong>Remy : </strong>"Pour ma part je me rendais déjà dans bien des magasins car j'aime beaucoup me balader, surtout dans les caves et les cuisines. Je connaissais par coeur le contenu des boutiques bio (dont je raffole) ainsi que les ingrédients de tous les aliments vendus. Lorsque Colette m'a demandé si elle pouvait remplacer son Nutella matinal par un aliment plus sain, je savais tout de suite où le trouver. L'idée de Pur Beurre était née !"</p>
             </div>
-
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading">Contactez nous!</h2>
-        <hr class="my-4">
-        <p class="mb-5">Vous souhaitez en savoir d'avantages ou participer ? N'hésitez pas ! Envoyez nous un e-mail ou appellez nous et nous serons ravis de vous répondre !</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ml-auto text-center">
-        <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-        <p>12.34.56.67.89</p>
-      </div>
-      <div class="col-lg-4 mr-auto text-center">
-        <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-        <p>
-          <a href="mailto:your-email@your-domain.com">mail@mail.com</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% include 'openfoodfacts/contact.html' %}
 
 {% endblock %}
