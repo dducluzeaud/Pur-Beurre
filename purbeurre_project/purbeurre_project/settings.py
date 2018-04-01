@@ -128,3 +128,6 @@ STATIC_URL = '/static/'
 
 # Django debug toolbar
 INTERNAL_IPS = ['127.0.0.1']
+
+LOGIN_REDIRECT_URL = '/openfoodfacts/account'
+LOGIN_URL = '/openfoodfacts/login'
