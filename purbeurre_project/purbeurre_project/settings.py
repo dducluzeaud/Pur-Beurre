@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,10 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'an!azkrpo-nm5yjpst^l#1-gd0lykcbeb1_(stfhe-aa#+1=%b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ['oc-purberre.herokuapp.com']
 
@@ -136,16 +134,6 @@ INTERNAL_IPS = ['127.0.0.1']
 
 LOGIN_REDIRECT_URL = '/openfoodfacts/account'
 LOGIN_URL = '/openfoodfacts/login'
-
-if os.environ.get('ENV') == 'PRODUCTION':
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-    STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, 'static'),)
-
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
