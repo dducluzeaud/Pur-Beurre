@@ -20,7 +20,7 @@ from django.contrib import admin
 from openfoodfacts import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index, name="index"),
     url(r'^openfoodfacts/', include(('openfoodfacts.urls', 'openfoodfacts'),
         namespace='openfoodfacts'
         )),
