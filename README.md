@@ -12,7 +12,6 @@ If you don't use the requirements.text file.
 
 ./manage py test
 
-```
 
 ## Deployment
 
@@ -23,7 +22,7 @@ This project is hosted on heroku:
 
 * [Python](https://www.python.org) - Programming Language
 * [Django](https://www.djangoproject.com) - Web Framework
-* [pipenv](https://github.com/pypa/pipenv/) - Used to generate virtualenv
+* [Pipenv](https://github.com/pypa/pipenv/) - Used to generate virtualenv
 
 ## Authors
 
