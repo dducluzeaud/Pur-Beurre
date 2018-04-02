@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Django = "*"
+"psycopg2" = "*"
+requests = "*"
+django-debug-toolbar = "*"
+"psycopg2-binary" = "*"
+whitenoise = "*"
+dj-database-url = "*"
+
+[dev-packages]
+coverage = "*"
+
+[requires]
+python_version = "3.6"
