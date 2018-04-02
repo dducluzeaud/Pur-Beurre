@@ -79,7 +79,7 @@ def search(request):
         'title': query_prod.product_name,
         'img': query_prod.img,
         'query_prod': query_prod.id_product,
-        "page_title" : "Résultats"
+        "page_title": "Résultats"
     }
     return render(request, 'openfoodfacts/search.html', context)
 
@@ -92,33 +92,38 @@ def detail(request, id_product):
     salt_index_img = ""
     sugar_index_img = ""
     url = "https://static.openfoodfacts.org/images/misc/"
-    if product.fat < 3:
-        fat_index_img = url + "low_30.png"
-    elif 3 <= product.fat < 20:
-        fat_index_img = url + "moderate_30.png"
-    else:
-        fat_index_img = url + "high_30.png"
 
-    if product.saturated_fat < 1.5:
-        saturated_fat_index_img = url + "low_30.png"
-    elif 1.5 <= product.saturated_fat < 5:
-        saturated_fat_index_img = url + "moderate_30.png"
-    else:
-        saturated_fat_index_img = url + "high_30.png"
+    if product.fat:
+        if product.fat < 3:
+            fat_index_img = url + "low_30.png"
+        elif 3 <= product.fat < 20:
+            fat_index_img = url + "moderate_30.png"
+        else:
+            fat_index_img = url + "high_30.png"
 
-    if product.salt < 0.3:
-        salt_index_img = url + "low_30.png"
-    elif 0.3 <= product.salt < 1.5:
-        salt_index_img = url + "moderate_30.png"
-    else:
-        salt_index_img = url + "high_30.png"
+    if product.saturated_fat:
+        if product.saturated_fat < 1.5:
+            saturated_fat_index_img = url + "low_30.png"
+        elif 1.5 <= product.saturated_fat < 5:
+            saturated_fat_index_img = url + "moderate_30.png"
+        else:
+            saturated_fat_index_img = url + "high_30.png"
 
-    if product.sugar < 5:
-        sugar_index_img = url + "low_30.png"
-    elif 5 <= product.sugar < 12.5:
-        sugar_index_img = url + "moderate_30.png"
-    else:
-        sugar_index_img = url + "high_30.png"
+    if product.salt:
+        if product.salt < 0.3:
+            salt_index_img = url + "low_30.png"
+        elif 0.3 <= product.salt < 1.5:
+            salt_index_img = url + "moderate_30.png"
+        else:
+            salt_index_img = url + "high_30.png"
+
+    if product.sugar:
+        if product.sugar < 5:
+            sugar_index_img = url + "low_30.png"
+        elif 5 <= product.sugar < 12.5:
+            sugar_index_img = url + "moderate_30.png"
+        else:
+            sugar_index_img = url + "high_30.png"
 
     context = {
         "product": product.product_name,
@@ -170,7 +175,7 @@ def account(request):
     return render(request, 'openfoodfacts/account.html', context)
 
 
-def contact(request):
+def contacts(request):
     context = {
         "title": 'Contacts',
         "img": IMG,
