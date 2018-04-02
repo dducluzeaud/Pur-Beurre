@@ -38,7 +38,7 @@ class Substitutes(models.Model):
 
     def __str__(self):
         return str({
-            "origin": self.orign,
+            "origin": self.origin,
             "replacement": self.replacement,
             "user": self.user
         })
