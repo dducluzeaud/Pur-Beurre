@@ -12,6 +12,7 @@ django-debug-toolbar = "*"
 whitenoise = "*"
 dj-database-url = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 coverage = "*"

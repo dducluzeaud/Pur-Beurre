@@ -29,7 +29,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['purbeurreproject.herokuapp.com']
+ALLOWED_HOSTS = ['oc-purberre.herokuapp.com']
 
 
 # Application definition
@@ -146,3 +146,6 @@ if os.environ.get('ENV') == 'PRODUCTION':
 
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
