@@ -236,6 +236,10 @@ header.masthead {
 	background-size: cover;
 }
 
+#p404 {
+	background-image: url("https://cdn.frontify.com/api/screen/thumbnail/noC3FKs0EmHyA86xLadg8UfRLI1_3VmJ8JW_Ejketp3exBv9JHYL8s40CGyc_D2d5zHlgidrMQQz5U_T8fSbIw/1360");
+}
+
 header.masthead hr {
 	margin-top: 30px;
 	margin-bottom: 30px;
