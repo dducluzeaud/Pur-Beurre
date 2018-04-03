@@ -236,6 +236,17 @@ header.masthead {
 	background-size: cover;
 }
 
+header.masthead#404 {
+	padding-top: 10rem;
+	padding-bottom: calc(10rem - 56px);
+	background-image: url("https://cdn.frontify.com/api/screen/thumbnail/noC3FKs0EmHyA86xLadg8UfRLI1_3VmJ8JW_Ejketp3exBv9JHYL8s40CGyc_D2d5zHlgidrMQQz5U_T8fSbIw/1360");
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 header.masthead hr {
 	margin-top: 30px;
 	margin-bottom: 30px;
