@@ -238,6 +238,17 @@ header.masthead {
 
 #p404 {
 	background-image: url("https://cdn.frontify.com/api/screen/thumbnail/noC3FKs0EmHyA86xLadg8UfRLI1_3VmJ8JW_Ejketp3exBv9JHYL8s40CGyc_D2d5zHlgidrMQQz5U_T8fSbIw/1360");
+    font-weight: bold;
+}
+
+.navbar-collapse.collapse.show input, button{
+    color: black;
+    border-bottom: 1px solid;
+}
+
+.navbar-collapse.collapse.show button{
+    color: black;
+    border-bottom: 1px;
 }
 
 header.masthead hr {
