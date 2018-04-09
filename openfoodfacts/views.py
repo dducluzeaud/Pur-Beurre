@@ -32,6 +32,7 @@ def search(request):
         raise Http404
     else:
         products_list = Products.objects.filter(category=query_prod.category)
+        products_list = products_list.filter(nutriscore__lte=query_prod.nutriscore)
         products_list = products_list.order_by('nutriscore')
         products_list = products_list.exclude(pk=query_prod.id_product)
 
