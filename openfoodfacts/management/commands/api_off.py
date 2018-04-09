@@ -28,8 +28,9 @@ class Command(BaseCommand):
         api_url = "https://fr.openfoodfacts.org/cgi/search.pl"
 
         params = {
-            'search_terms': category,
-            'search_simple': '1',
+            'tagtype_0': 'categories',
+            'tag_contains_0': 'contains',
+            'tag_0': category,
             'action': 'process',
             'json': '1',
             'page_size': '250'
