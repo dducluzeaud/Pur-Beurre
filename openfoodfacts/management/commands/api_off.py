@@ -28,9 +28,8 @@ class Command(BaseCommand):
         api_url = "https://fr.openfoodfacts.org/cgi/search.pl"
 
         params = {
-            'tagtype_0': 'categories',
-            'tag_contains_0': 'contains',
-            'tag_0': category,
+            'search_terms': category,
+            'search_simple': '1',
             'action': 'process',
             'json': '1',
             'page_size': '250'
@@ -57,7 +56,7 @@ class Command(BaseCommand):
                             "saturated_fat": products_data["products"][i]["nutriments"]["saturated-fat_100g"],
                             "salt": products_data["products"][i]["nutriments"]["salt_100g"],
                             "sugar": products_data["products"][i]["nutriments"]["sugars_100g"],
-                            "categories": products_data["products"][i]["categories"].split(',')[:2]
+                            "categories": products_data["products"][i]["categories"].split(',')[:1]
                             }
                         content.append(extract_data)
                     except KeyError:
