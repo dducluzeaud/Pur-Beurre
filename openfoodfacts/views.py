@@ -36,6 +36,7 @@ def search(request):
         products_list = products_list.order_by('nutriscore')
         products_list = products_list.exclude(pk=query_prod.id_product)
 
+
         if request.user.is_authenticated:
             # Remove products already in the user list
             for product in products_list:
